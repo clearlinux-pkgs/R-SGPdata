@@ -4,17 +4,18 @@
 #
 Name     : R-SGPdata
 Version  : 21.0.0.0
-Release  : 5
+Release  : 6
 URL      : https://cran.r-project.org/src/contrib/SGPdata_21.0-0.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/SGPdata_21.0-0.0.tar.gz
 Summary  : Exemplar Data Sets for Student Growth Percentiles (SGP) Analyses
 Group    : Development/Tools
 License  : GPL-3.0
-Requires: R-data.table
-Requires: R-rlang
-Requires: R-toOrdinal
+Requires: R-evaluate
+Requires: R-stringi
 BuildRequires : R-data.table
+BuildRequires : R-evaluate
 BuildRequires : R-rlang
+BuildRequires : R-stringi
 BuildRequires : R-toOrdinal
 BuildRequires : buildreq-R
 
@@ -29,10 +30,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1546661459
+export SOURCE_DATE_EPOCH=1552847389
 
 %install
-export SOURCE_DATE_EPOCH=1546661459
+export SOURCE_DATE_EPOCH=1552847389
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -68,8 +69,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library SGPdata|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  SGPdata || :
 
 
 %files
