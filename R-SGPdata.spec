@@ -4,7 +4,7 @@
 #
 Name     : R-SGPdata
 Version  : 25.0.0.0
-Release  : 26
+Release  : 27
 URL      : https://cran.r-project.org/src/contrib/SGPdata_25.0-0.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/SGPdata_25.0-0.0.tar.gz
 Summary  : Exemplar Data Sets for Student Growth Percentiles (SGP) Analyses
